@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="2219169fs"></ZoomStartTime>
-      <ZoomEndTime time="10439170fs"></ZoomEndTime>
-      <Cursor1Time time="3589169fs"></Cursor1Time>
+      <ZoomStartTime time="59598167fs"></ZoomStartTime>
+      <ZoomEndTime time="59671468fs"></ZoomEndTime>
+      <Cursor1Time time="59625000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="111"></NameColumnWidth>
-      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+      <NameColumnWidth column_width="180"></NameColumnWidth>
+      <ValueColumnWidth column_width="86"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="11" />
+   <WVObjectSize size="16" />
    <wvobject type="logic" fp_name="/transmit_test/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -62,8 +62,28 @@
       <obj_property name="ElementShortName">data_in</obj_property>
       <obj_property name="ObjectShortName">data_in</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/transmit_test/rx/RxData">
-      <obj_property name="ElementShortName">RxData[7:0]</obj_property>
-      <obj_property name="ObjectShortName">RxData[7:0]</obj_property>
+   <wvobject type="array" fp_name="/transmit_test/main_vec/a_data_write">
+      <obj_property name="ElementShortName">a_data_write[15:0]</obj_property>
+      <obj_property name="ObjectShortName">a_data_write[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/transmit_test/main_vec/a_addr">
+      <obj_property name="ElementShortName">a_addr[3:0]</obj_property>
+      <obj_property name="ObjectShortName">a_addr[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/transmit_test/main_vec/a_enables">
+      <obj_property name="ElementShortName">a_enables[7:0]</obj_property>
+      <obj_property name="ObjectShortName">a_enables[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/transmit_test/main_vec/data_in">
+      <obj_property name="ElementShortName">data_in</obj_property>
+      <obj_property name="ObjectShortName">data_in</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/transmit_test/main_vec/byte_num">
+      <obj_property name="ElementShortName">byte_num</obj_property>
+      <obj_property name="ObjectShortName">byte_num</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/transmit_test/main_vec/\brams[0].vec /inst/\native_mem_module.blk_mem_gen_v8_4_4_inst /memory">
+      <obj_property name="ElementShortName">memory[0:15][15:0]</obj_property>
+      <obj_property name="ObjectShortName">memory[0:15][15:0]</obj_property>
    </wvobject>
 </wave_config>

@@ -47,11 +47,11 @@ module transmit_test;
         .TxD(TxD)
     );
     
-    uart_receive rx(
+    bram_loader main_vec(
         .clk(clk),
         .rst_n(rst_n),
-        .RxD(TxD),
-        .has_output(data_in)
+        .uart_rx(TxD),
+        .uart_tx()
     );
     
     reg[8:0] countdown;
