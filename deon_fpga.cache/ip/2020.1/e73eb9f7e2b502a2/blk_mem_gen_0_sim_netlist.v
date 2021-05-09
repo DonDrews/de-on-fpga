@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-// Date        : Sat May  8 15:37:17 2021
+// Date        : Sat May  8 15:37:16 2021
 // Host        : donovan-FR running 64-bit Ubuntu 18.04.5 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/donovan/deon_fpga/deon_fpga.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
+//               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ blk_mem_gen_0_sim_netlist.v
 // Design      : blk_mem_gen_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -14,7 +14,7 @@
 
 (* CHECK_LICENSE_TYPE = "blk_mem_gen_0,blk_mem_gen_v8_4_4,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "blk_mem_gen_v8_4_4,Vivado 2020.1" *) 
 (* NotValidForBitStream *)
-module blk_mem_gen_0
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
    (clka,
     ena,
     wea,
@@ -141,7 +141,7 @@ module blk_mem_gen_0
   (* C_XDEVICEFAMILY = "artix7" *) 
   (* KEEP_HIERARCHY = "soft" *) 
   (* downgradeipidentifiedwarnings = "yes" *) 
-  blk_mem_gen_0_blk_mem_gen_v8_4_4 U0
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_v8_4_4 U0
        (.addra(addra),
         .addrb(addrb),
         .clka(clka),
@@ -207,8 +207,7 @@ module blk_mem_gen_0
         .web(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_generic_cstr" *) 
-module blk_mem_gen_0_blk_mem_gen_generic_cstr
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_generic_cstr
    (doutb,
     clkb,
     clka,
@@ -238,7 +237,7 @@ module blk_mem_gen_0_blk_mem_gen_generic_cstr
   wire enb;
   wire [0:0]wea;
 
-  blk_mem_gen_0_blk_mem_gen_prim_width \ramloop[0].ram.r 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width \ramloop[0].ram.r 
        (.addra(addra),
         .addrb(addrb),
         .clka(clka),
@@ -250,8 +249,7 @@ module blk_mem_gen_0_blk_mem_gen_generic_cstr
         .wea(wea));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
-module blk_mem_gen_0_blk_mem_gen_prim_width
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_width
    (doutb,
     clkb,
     clka,
@@ -281,7 +279,7 @@ module blk_mem_gen_0_blk_mem_gen_prim_width
   wire enb;
   wire [0:0]wea;
 
-  blk_mem_gen_0_blk_mem_gen_prim_wrapper \prim_noinit.ram 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper \prim_noinit.ram 
        (.addra(addra),
         .addrb(addrb),
         .clka(clka),
@@ -293,8 +291,7 @@ module blk_mem_gen_0_blk_mem_gen_prim_width
         .wea(wea));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper" *) 
-module blk_mem_gen_0_blk_mem_gen_prim_wrapper
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_prim_wrapper
    (doutb,
     clkb,
     clka,
@@ -470,8 +467,7 @@ module blk_mem_gen_0_blk_mem_gen_prim_wrapper
         .WEBWE({wea,wea,wea,wea}));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_top" *) 
-module blk_mem_gen_0_blk_mem_gen_top
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_top
    (doutb,
     clkb,
     clka,
@@ -501,7 +497,7 @@ module blk_mem_gen_0_blk_mem_gen_top
   wire enb;
   wire [0:0]wea;
 
-  blk_mem_gen_0_blk_mem_gen_generic_cstr \valid.cstr 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_generic_cstr \valid.cstr 
        (.addra(addra),
         .addrb(addrb),
         .clka(clka),
@@ -538,8 +534,8 @@ endmodule
 (* C_WEA_WIDTH = "1" *) (* C_WEB_WIDTH = "1" *) (* C_WRITE_DEPTH_A = "16" *) 
 (* C_WRITE_DEPTH_B = "16" *) (* C_WRITE_MODE_A = "NO_CHANGE" *) (* C_WRITE_MODE_B = "WRITE_FIRST" *) 
 (* C_WRITE_WIDTH_A = "16" *) (* C_WRITE_WIDTH_B = "16" *) (* C_XDEVICEFAMILY = "artix7" *) 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_4_4" *) (* downgradeipidentifiedwarnings = "yes" *) 
-module blk_mem_gen_0_blk_mem_gen_v8_4_4
+(* downgradeipidentifiedwarnings = "yes" *) 
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_v8_4_4
    (clka,
     rsta,
     ena,
@@ -744,7 +740,7 @@ module blk_mem_gen_0_blk_mem_gen_v8_4_4
   assign sbiterr = \<const0> ;
   GND GND
        (.G(\<const0> ));
-  blk_mem_gen_0_blk_mem_gen_v8_4_4_synth inst_blk_mem_gen
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_v8_4_4_synth inst_blk_mem_gen
        (.addra(addra),
         .addrb(addrb),
         .clka(clka),
@@ -756,8 +752,7 @@ module blk_mem_gen_0_blk_mem_gen_v8_4_4
         .wea(wea));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_4_4_synth" *) 
-module blk_mem_gen_0_blk_mem_gen_v8_4_4_synth
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_v8_4_4_synth
    (doutb,
     clkb,
     clka,
@@ -787,7 +782,7 @@ module blk_mem_gen_0_blk_mem_gen_v8_4_4_synth
   wire enb;
   wire [0:0]wea;
 
-  blk_mem_gen_0_blk_mem_gen_top \gnbram.gnativebmg.native_blk_mem_gen 
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_blk_mem_gen_top \gnbram.gnativebmg.native_blk_mem_gen 
        (.addra(addra),
         .addrb(addrb),
         .clka(clka),

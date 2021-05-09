@@ -42,19 +42,24 @@ module transmit_test;
     uart_transmit tx(
         .clk(clk),
         .rst_n(rst_n),
-        .transmit(transmit),
+        .valid(transmit),
         .data(data),
-        .TxD(TxD)
+        .TxD(TxD),
+        .ready()
     );
     
+    wire sd;
+    wire tx_last;
     bram_loader main_vec(
         .clk(clk),
         .rst_n(rst_n),
+        .send_data(sd),
         .uart_rx(TxD),
-        .uart_tx()
+        .uart_tx(tx_last)
     );
     
     reg[8:0] countdown;
+    assign sd = (data > 8'b10101110);
     always @(posedge clk) begin
         if(~rst_n) begin
             countdown <= 0;

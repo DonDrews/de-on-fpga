@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="59598167fs"></ZoomStartTime>
-      <ZoomEndTime time="59671468fs"></ZoomEndTime>
-      <Cursor1Time time="59625000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="75700001fs"></ZoomEndTime>
+      <Cursor1Time time="15400000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="180"></NameColumnWidth>
-      <ValueColumnWidth column_width="86"></ValueColumnWidth>
+      <NameColumnWidth column_width="176"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="16" />
+   <WVObjectSize size="19" />
    <wvobject type="logic" fp_name="/transmit_test/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -45,27 +45,6 @@
       <obj_property name="ElementShortName">TxD</obj_property>
       <obj_property name="ObjectShortName">TxD</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/transmit_test/tx/counter">
-      <obj_property name="ElementShortName">counter[13:0]</obj_property>
-      <obj_property name="ObjectShortName">counter[13:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/transmit_test/tx/state">
-      <obj_property name="ElementShortName">state</obj_property>
-      <obj_property name="ObjectShortName">state</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/transmit_test/tx/nextstate">
-      <obj_property name="ElementShortName">nextstate</obj_property>
-      <obj_property name="ObjectShortName">nextstate</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/transmit_test/data_in">
-      <obj_property name="ElementShortName">data_in</obj_property>
-      <obj_property name="ObjectShortName">data_in</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/transmit_test/main_vec/a_data_write">
-      <obj_property name="ElementShortName">a_data_write[15:0]</obj_property>
-      <obj_property name="ObjectShortName">a_data_write[15:0]</obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/transmit_test/main_vec/a_addr">
       <obj_property name="ElementShortName">a_addr[3:0]</obj_property>
       <obj_property name="ObjectShortName">a_addr[3:0]</obj_property>
@@ -85,5 +64,37 @@
    <wvobject type="array" fp_name="/transmit_test/main_vec/\brams[0].vec /inst/\native_mem_module.blk_mem_gen_v8_4_4_inst /memory">
       <obj_property name="ElementShortName">memory[0:15][15:0]</obj_property>
       <obj_property name="ObjectShortName">memory[0:15][15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/transmit_test/main_vec/sender/data">
+      <obj_property name="ElementShortName">data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/transmit_test/main_vec/sender/valid">
+      <obj_property name="ElementShortName">valid</obj_property>
+      <obj_property name="ObjectShortName">valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/transmit_test/main_vec/sender/ready">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/transmit_test/main_vec/state">
+      <obj_property name="ElementShortName">state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/transmit_test/main_vec/send_data">
+      <obj_property name="ElementShortName">send_data</obj_property>
+      <obj_property name="ObjectShortName">send_data</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/transmit_test/main_vec/sender/nextstate">
+      <obj_property name="ElementShortName">nextstate</obj_property>
+      <obj_property name="ObjectShortName">nextstate</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/transmit_test/main_vec/read_addr_byte">
+      <obj_property name="ElementShortName">read_addr_byte[7:0]</obj_property>
+      <obj_property name="ObjectShortName">read_addr_byte[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/transmit_test/tx_last">
+      <obj_property name="ElementShortName">tx_last</obj_property>
+      <obj_property name="ObjectShortName">tx_last</obj_property>
    </wvobject>
 </wave_config>

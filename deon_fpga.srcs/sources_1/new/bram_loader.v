@@ -23,6 +23,7 @@
 module bram_loader(
    input clk,
    input rst_n,
+   input send_data,
    input uart_rx,
    output uart_tx
 );
@@ -38,25 +39,23 @@ reg[15:0] a_data_write;
 wire data_in;
 wire[7:0] uart_data;
 
-//have all RAMs set to write for now
-assign a_write = 1;
+//PORTB
+wire[3:0] b_addr;
+wire[15:0] b_data_read [num_brams-1:0];
 
 genvar i;
 for(i=0; i<num_brams; i=i+1) begin:brams
     blk_mem_gen_0 vec (
         .clka(clk),    // input wire clka
         .ena(a_enables),      // input wire ena
-        .wea(a_write),      // input wire [0 : 0] wea
+        .wea(1),      // input wire [0 : 0] wea
         .addra(a_addr),  // input wire [3 : 0] addra
         .dina(a_data_write),    // input wire [15 : 0] dina
         //PORTB left unconnected for now
-        .douta(),  // output wire [15 : 0] douta
-        .clkb(),    // input wire clkb
-        .enb(),      // input wire enb
-        .web(),      // input wire [0 : 0] web
-        .addrb(),  // input wire [3 : 0] addrb
-        .dinb(),    // input wire [15 : 0] dinb
-        .doutb()  // output wire [15 : 0] doutb
+        .clkb(clk),    // input wire clkb
+        .enb(1),      // input wire enb
+        .addrb(b_addr),  // input wire [3 : 0] addrb
+        .doutb(b_data_read[i])  // output wire [15 : 0] doutb
     );
 end
 
@@ -106,6 +105,13 @@ always @(posedge clk) begin
     end
 end
 
+wire tx;
+button_debounce tx_button(
+    .clk(clk),
+    .button(send_data),
+    .button_re(tx)
+);
+
 
 //handle address for ram load
 //delayed by one clock cycle
@@ -118,5 +124,68 @@ always @(posedge clk) begin
         if(increment_addr) load_addr <= load_addr + 1;
     end
 end
+
+//reading and send to uart
+wire[15:0] true_bram_data;
+reg[7:0] read_addr_byte;
+assign b_addr = read_addr_byte[4:1];
+wire r_byte_num = read_addr_byte[0];
+reg[1:0] state;
+wire uart_ready;
+reg uart_valid;
+reg inc_read_addr;
+reg[7:0] uart_send_byte;
+
+
+assign true_bram_data = b_data_read[read_addr_byte[7:5]];
+
+always @(posedge clk) begin
+    if(~rst_n) begin
+        state <= 0;
+        inc_read_addr <= 0;
+    end else begin
+        inc_read_addr <= 0;
+        case(state)
+            0: begin //not transmitting
+                read_addr_byte <= 0;
+                uart_valid <= 0;
+                state <= 0;
+                if(tx) state <= 2;
+            end
+            1: begin //transmitting
+                uart_send_byte <= (read_addr_byte[0]) ? true_bram_data[15:8] : true_bram_data[7:0];
+                if(~uart_ready) begin
+                    uart_valid <= 0;
+                    inc_read_addr <= 1;
+                    //if we've transmitted all the bytes, switch back to idle
+                    if(read_addr_byte == 8'hFF) state <= 0;
+                    else state <= 2;
+                end
+            end
+            2: begin //waiting to transit (back pressure from UART)
+                uart_valid <= 1;
+                if(uart_valid & uart_ready)
+                    state <= 1;
+            end
+        endcase
+    end
+end
+
+always @(posedge clk) begin
+    if(~rst_n) begin
+        read_addr_byte <= 0;
+    end else begin
+        if(inc_read_addr) read_addr_byte <= read_addr_byte + 8'h01;
+    end
+end
+
+uart_transmit sender(
+    .clk(clk),
+    .rst_n(rst_n),
+    .valid(uart_valid),
+    .data(uart_send_byte),
+    .TxD(uart_tx),
+    .ready(uart_ready)
+);
 
 endmodule

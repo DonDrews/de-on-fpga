@@ -27,9 +27,10 @@
 module uart_transmit(
 input clk, //UART input clock
 input rst_n, // reset signal
-input transmit, //btn signal to trigger the UART communication
+input valid, //btn signal to trigger the UART communication
 input [7:0] data, // data transmitted
-output reg TxD // Transmitter serial output. TxD will be held high during reset, or when no transmissions are taking place.
+output reg TxD, // Transmitter serial output. TxD will be held high during reset, or when no transmissions are taking place.
+output ready
     );
 
 //internal variables
@@ -67,9 +68,10 @@ begin
                      end
                end
          end
-end 
+end
 
 //state machine
+assign ready = ~state;
 
 always @ (posedge clk) //trigger by positive edge of clock, 
 //always @ (state or bitcounter or transmit)
@@ -80,7 +82,7 @@ begin
     TxD <=1; // set TxD equals to 1 during no transmission
     case (state)
         0: begin // idle state
-             if (transmit) begin // assert transmit input
+             if (valid) begin // assert transmit input
                 nextstate <= 1; // Move to transmit state
                 load <=1; // set load to 1 to prepare to load the data
                 shift <=0; // set shift to 0 so no shift ready yet
@@ -88,7 +90,7 @@ begin
              end 
 		     else begin // if transmit not asserted
                 nextstate <= 0; // next state is back to idle state
-                TxD <= 1; 
+                TxD <= 1;
              end
            end
         1: begin  // transmit state
