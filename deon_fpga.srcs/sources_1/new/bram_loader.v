@@ -25,8 +25,21 @@ module bram_loader(
    input rst_n,
    input send_data,
    input uart_rx,
-   output uart_tx
+   output uart_tx,
+   output not_reset,
+   output button_re
 );
+
+//TEST for basys board
+reg n_reset;
+assign not_reset = n_reset;
+always @(posedge clk) begin
+    if(~rst_n) begin
+        n_reset <= 0;
+    end else begin
+        n_reset <= 1;
+    end
+end
 
 parameter num_brams = 8;
 
@@ -51,7 +64,6 @@ for(i=0; i<num_brams; i=i+1) begin:brams
         .wea(1),      // input wire [0 : 0] wea
         .addra(a_addr),  // input wire [3 : 0] addra
         .dina(a_data_write),    // input wire [15 : 0] dina
-        //PORTB left unconnected for now
         .clkb(clk),    // input wire clkb
         .enb(1),      // input wire enb
         .addrb(b_addr),  // input wire [3 : 0] addrb
@@ -139,15 +151,17 @@ reg[7:0] uart_send_byte;
 
 assign true_bram_data = b_data_read[read_addr_byte[7:5]];
 
+assign button_re = |uart_send_byte;
+
 always @(posedge clk) begin
     if(~rst_n) begin
         state <= 0;
         inc_read_addr <= 0;
+        uart_send_byte <= 0;
     end else begin
         inc_read_addr <= 0;
         case(state)
             0: begin //not transmitting
-                read_addr_byte <= 0;
                 uart_valid <= 0;
                 state <= 0;
                 if(tx) state <= 2;

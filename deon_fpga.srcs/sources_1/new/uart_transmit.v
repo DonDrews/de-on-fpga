@@ -55,7 +55,7 @@ begin
        end
     else begin
          counter <= counter + 1; //counter for baud rate generator start counting 
-            if (counter >= 32) //if count to 10416 (from 0 to 10415) (this gives 9600 baud on a 100MHz clock)
+            if (counter >= 10415) //if count to 10416 (from 0 to 10415) (this gives 9600 baud on a 100MHz clock)
                begin 
                   state <= nextstate; //previous state change to next state
                   counter <=0; // reset couter to 0
