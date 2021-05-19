@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../deon_fpga.srcs/sources_1/new/iter_compute.v" \
+"../../../../deon_fpga.srcs/sim_2/new/dsp_tester.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

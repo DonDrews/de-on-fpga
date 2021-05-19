@@ -41,7 +41,11 @@ reg clear_bitcounter,inc_bitcounter,inc_samplecounter,clear_samplecounter; //cle
 
 // constants
 parameter clk_freq = 100_000_000;  // system clock frequency
+`ifdef SYNTHESIS
 parameter baud_rate = 9600; //baud rate
+`else
+parameter baud_rate = 1_000_000; //baud rate
+`endif
 parameter div_sample = 4; //oversampling
 parameter div_counter = clk_freq/(baud_rate*div_sample);  // this is the number we have to divide the system clock frequency to get a frequency (div_sample) time higher than (baud_rate)
 parameter mid_sample = (div_sample/2);  // this is the middle point of a bit where you want to sample it

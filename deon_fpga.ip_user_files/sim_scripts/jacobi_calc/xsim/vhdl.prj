@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../deon_fpga.srcs/sources_1/ip/jacobi_calc/sim/jacobi_calc.vhd" \
+
+nosort

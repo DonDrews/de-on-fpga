@@ -60,8 +60,8 @@ genvar i;
 for(i=0; i<num_brams; i=i+1) begin:brams
     blk_mem_gen_0 vec (
         .clka(clk),    // input wire clka
-        .ena(a_enables),      // input wire ena
-        .wea(1),      // input wire [0 : 0] wea
+        .ena(1),      // input wire ena
+        .wea(a_enables[i]),      // input wire [0 : 0] wea
         .addra(a_addr),  // input wire [3 : 0] addra
         .dina(a_data_write),    // input wire [15 : 0] dina
         .clkb(clk),    // input wire clkb

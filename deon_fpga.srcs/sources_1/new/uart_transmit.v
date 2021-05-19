@@ -32,6 +32,12 @@ input [7:0] data, // data transmitted
 output reg TxD, // Transmitter serial output. TxD will be held high during reset, or when no transmissions are taking place.
 output ready
     );
+    
+`ifdef SYNTHESIS
+parameter counter_wait = 10415;
+`else
+parameter counter_wait = 99;
+`endif
 
 //internal variables
 reg [3:0] bitcounter; //4 bits counter to count up to 10
@@ -55,7 +61,7 @@ begin
        end
     else begin
          counter <= counter + 1; //counter for baud rate generator start counting 
-            if (counter >= 10415) //if count to 10416 (from 0 to 10415) (this gives 9600 baud on a 100MHz clock)
+            if (counter >= counter_wait) //if count to 10416 (from 0 to 10415) (this gives 9600 baud on a 100MHz clock)
                begin 
                   state <= nextstate; //previous state change to next state
                   counter <=0; // reset couter to 0

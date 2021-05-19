@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Tue May 18 18:26:44 2021
+# Process ID: 31711
+# Current directory: /home/donovan/deon_fpga/deon_fpga.runs/impl_1
+# Command line: vivado -log bram_loader.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source bram_loader.tcl -notrace
+# Log file: /home/donovan/deon_fpga/deon_fpga.runs/impl_1/bram_loader.vdi
+# Journal file: /home/donovan/deon_fpga/deon_fpga.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source bram_loader.tcl -notrace

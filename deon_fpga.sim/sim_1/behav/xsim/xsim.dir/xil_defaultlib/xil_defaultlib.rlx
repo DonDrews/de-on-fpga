@@ -4,8 +4,8 @@ May 27 2020
 19:59:15
 /home/donovan/deon_fpga/deon_fpga.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
 /home/donovan/deon_fpga/deon_fpga.srcs/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v,1620513369,verilog,,/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/bram_loader.v,,blk_mem_gen_0,,,,,,,,
-/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/bram_loader.v,1621048944,verilog,,/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/button_debounce.v,,bram_loader,,,,,,,,
-/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/button_debounce.v,1620511092,verilog,,/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/uart_receive.v,,button_debounce,,,,,,,,
-/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/transmit_test.v,1620529013,verilog,,,,transmit_test,,,,,,,,
-/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/uart_receive.v,1620188811,verilog,,/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/uart_transmit.v,,uart_receive,,,,,,,,
-/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/uart_transmit.v,1620530177,verilog,,/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/transmit_test.v,,uart_transmit,,,,,,,,
+/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/bram_loader.v,1621386774,verilog,,/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/button_debounce.v,,bram_loader,,,,,,,,
+/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/button_debounce.v,1621048878,verilog,,/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/uart_receive.v,,button_debounce,,,,,,,,
+/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/transmit_test.v,1621385609,verilog,,,,transmit_test,,,,,,,,
+/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/uart_receive.v,1621387429,verilog,,/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/uart_transmit.v,,uart_receive,,,,,,,,
+/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/uart_transmit.v,1621387486,verilog,,/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/transmit_test.v,,uart_transmit,,,,,,,,

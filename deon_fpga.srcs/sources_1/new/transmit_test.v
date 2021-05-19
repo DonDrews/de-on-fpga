@@ -30,7 +30,7 @@ module transmit_test;
     
     initial begin
         rst_n = 0;
-        #(10);
+        #(100);
         rst_n = 1;
     end
     
@@ -58,14 +58,14 @@ module transmit_test;
         .uart_tx(tx_last)
     );
     
-    reg[8:0] countdown;
-    assign sd = (data > 8'b10101110);
+    reg[10:0] countdown;
+    assign sd = (data > 8'b11101010);
     always @(posedge clk) begin
         if(~rst_n) begin
             countdown <= 0;
             data <= 8'b10101010;
         end else begin
-            countdown <= countdown + 9'b1;
+            countdown <= countdown + 11'b1;
             if(countdown == 1)
             begin
                 data <= data + 1;
@@ -73,6 +73,6 @@ module transmit_test;
         end
     end
     
-    assign transmit = (countdown > 1 && countdown < 100);
+    assign transmit = (countdown > 500 && countdown < 800);
     
 endmodule

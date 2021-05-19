@@ -16,23 +16,15 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 23632
+INFO: [Synth 8-7075] Helper process launched with PID 31480
 WARNING: [Synth 8-6901] identifier 'pressed_count' is used before its declaration [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/button_debounce.v:31]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2149.289 ; gain = 0.000 ; free physical = 709 ; free virtual = 5511
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2149.289 ; gain = 0.000 ; free physical = 694 ; free virtual = 5731
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'bram_loader' [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/bram_loader.v:23]
 	Parameter num_brams bound to: 8 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [/home/donovan/deon_fpga/deon_fpga.runs/synth_1/.Xil/Vivado-23609-donovan-FR/realtime/blk_mem_gen_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (1#1) [/home/donovan/deon_fpga/deon_fpga.runs/synth_1/.Xil/Vivado-23609-donovan-FR/realtime/blk_mem_gen_0_stub.v:6]
-WARNING: [Synth 8-689] width (8) of port connection 'ena' does not match port width (1) of module 'blk_mem_gen_0' [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/bram_loader.v:63]
-WARNING: [Synth 8-689] width (8) of port connection 'ena' does not match port width (1) of module 'blk_mem_gen_0' [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/bram_loader.v:63]
-WARNING: [Synth 8-689] width (8) of port connection 'ena' does not match port width (1) of module 'blk_mem_gen_0' [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/bram_loader.v:63]
-WARNING: [Synth 8-689] width (8) of port connection 'ena' does not match port width (1) of module 'blk_mem_gen_0' [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/bram_loader.v:63]
-WARNING: [Synth 8-689] width (8) of port connection 'ena' does not match port width (1) of module 'blk_mem_gen_0' [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/bram_loader.v:63]
-WARNING: [Synth 8-689] width (8) of port connection 'ena' does not match port width (1) of module 'blk_mem_gen_0' [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/bram_loader.v:63]
-WARNING: [Synth 8-689] width (8) of port connection 'ena' does not match port width (1) of module 'blk_mem_gen_0' [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/bram_loader.v:63]
-WARNING: [Synth 8-689] width (8) of port connection 'ena' does not match port width (1) of module 'blk_mem_gen_0' [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/bram_loader.v:63]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [/home/donovan/deon_fpga/deon_fpga.runs/synth_1/.Xil/Vivado-31457-donovan-FR/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (1#1) [/home/donovan/deon_fpga/deon_fpga.runs/synth_1/.Xil/Vivado-31457-donovan-FR/realtime/blk_mem_gen_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'uart_receive' [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/uart_receive.v:23]
 	Parameter clk_freq bound to: 100000000 - type: integer 
 	Parameter baud_rate bound to: 9600 - type: integer 
@@ -40,28 +32,29 @@ INFO: [Synth 8-6157] synthesizing module 'uart_receive' [/home/donovan/deon_fpga
 	Parameter div_counter bound to: 2604 - type: integer 
 	Parameter mid_sample bound to: 2 - type: integer 
 	Parameter div_bit bound to: 10 - type: integer 
-INFO: [Synth 8-226] default block is never used [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/uart_receive.v:86]
+INFO: [Synth 8-226] default block is never used [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/uart_receive.v:90]
 INFO: [Synth 8-6155] done synthesizing module 'uart_receive' (2#1) [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/uart_receive.v:23]
 INFO: [Synth 8-6157] synthesizing module 'button_debounce' [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/button_debounce.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'button_debounce' (3#1) [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/button_debounce.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/bram_loader.v:164]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/bram_loader.v:163]
 INFO: [Synth 8-6157] synthesizing module 'uart_transmit' [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/uart_transmit.v:27]
-INFO: [Synth 8-226] default block is never used [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/uart_transmit.v:83]
+	Parameter counter_wait bound to: 10415 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/uart_transmit.v:89]
 INFO: [Synth 8-6155] done synthesizing module 'uart_transmit' (4#1) [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/uart_transmit.v:27]
 INFO: [Synth 8-6155] done synthesizing module 'bram_loader' (5#1) [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/bram_loader.v:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2182.105 ; gain = 32.816 ; free physical = 804 ; free virtual = 5606
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2182.105 ; gain = 32.816 ; free physical = 795 ; free virtual = 5833
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2197.949 ; gain = 48.660 ; free physical = 801 ; free virtual = 5603
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2197.949 ; gain = 48.660 ; free physical = 791 ; free virtual = 5829
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2197.949 ; gain = 48.660 ; free physical = 801 ; free virtual = 5603
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2197.949 ; gain = 48.660 ; free physical = 791 ; free virtual = 5829
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2197.949 ; gain = 0.000 ; free physical = 793 ; free virtual = 5596
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2197.949 ; gain = 0.000 ; free physical = 784 ; free virtual = 5821
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -88,11 +81,11 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/bram_loader_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2336.684 ; gain = 0.000 ; free physical = 709 ; free virtual = 5512
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2336.684 ; gain = 0.000 ; free physical = 696 ; free virtual = 5734
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2336.684 ; gain = 0.000 ; free physical = 709 ; free virtual = 5512
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2336.684 ; gain = 0.000 ; free physical = 696 ; free virtual = 5734
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'brams[0].vec' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'brams[1].vec' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'brams[2].vec' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
@@ -102,14 +95,14 @@ WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context s
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'brams[6].vec' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'brams[7].vec' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 768 ; free virtual = 5576
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 759 ; free virtual = 5797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 768 ; free virtual = 5576
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 759 ; free virtual = 5797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -123,7 +116,7 @@ Applied set_property DONT_TOUCH = true for \brams[5].vec . (constraint file  aut
 Applied set_property DONT_TOUCH = true for \brams[6].vec . (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for \brams[7].vec . (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 768 ; free virtual = 5576
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 759 ; free virtual = 5797
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'bram_loader'
 ---------------------------------------------------------------------------------------------------
@@ -135,7 +128,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'bram_
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'bram_loader'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 760 ; free virtual = 5568
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 748 ; free virtual = 5786
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -181,25 +174,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 746 ; free virtual = 5558
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 734 ; free virtual = 5776
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 632 ; free virtual = 5438
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 619 ; free virtual = 5660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 631 ; free virtual = 5437
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 618 ; free virtual = 5659
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 630 ; free virtual = 5437
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 618 ; free virtual = 5659
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -217,37 +210,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 631 ; free virtual = 5437
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 618 ; free virtual = 5659
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 631 ; free virtual = 5437
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 618 ; free virtual = 5659
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 631 ; free virtual = 5437
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 618 ; free virtual = 5659
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 631 ; free virtual = 5437
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 618 ; free virtual = 5659
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 631 ; free virtual = 5437
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 618 ; free virtual = 5659
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 631 ; free virtual = 5437
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 618 ; free virtual = 5659
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -269,38 +262,38 @@ Report Cell Usage:
 |9     |BUFG           |     1|
 |10    |CARRY4         |     8|
 |11    |LUT1           |    10|
-|12    |LUT2           |    17|
-|13    |LUT3           |    26|
-|14    |LUT4           |    20|
+|12    |LUT2           |    16|
+|13    |LUT3           |    34|
+|14    |LUT4           |    21|
 |15    |LUT5           |    14|
-|16    |LUT6           |    46|
+|16    |LUT6           |    45|
 |17    |MUXF7          |    16|
 |18    |MUXF8          |     8|
-|19    |FDRE           |   127|
+|19    |FDRE           |   134|
 |20    |FDSE           |     1|
 |21    |IBUF           |     4|
 |22    |OBUF           |     3|
 +------+---------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 631 ; free virtual = 5437
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2336.684 ; gain = 187.395 ; free physical = 618 ; free virtual = 5659
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 2336.684 ; gain = 48.660 ; free physical = 683 ; free virtual = 5489
-Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 2336.691 ; gain = 187.395 ; free physical = 683 ; free virtual = 5489
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 2336.684 ; gain = 48.660 ; free physical = 670 ; free virtual = 5711
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 2336.691 ; gain = 187.395 ; free physical = 670 ; free virtual = 5711
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2336.691 ; gain = 0.000 ; free physical = 755 ; free virtual = 5561
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2336.691 ; gain = 0.000 ; free physical = 742 ; free virtual = 5783
 INFO: [Netlist 29-17] Analyzing 32 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2336.691 ; gain = 0.000 ; free physical = 701 ; free virtual = 5508
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2336.691 ; gain = 0.000 ; free physical = 688 ; free virtual = 5729
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-30 Infos, 17 Warnings, 0 Critical Warnings and 0 Errors encountered.
+30 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2336.691 ; gain = 187.586 ; free physical = 834 ; free virtual = 5646
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2336.691 ; gain = 187.586 ; free physical = 826 ; free virtual = 5867
 INFO: [Common 17-1381] The checkpoint '/home/donovan/deon_fpga/deon_fpga.runs/synth_1/bram_loader.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file bram_loader_utilization_synth.rpt -pb bram_loader_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri May 14 20:54:40 2021...
+INFO: [Common 17-206] Exiting Vivado at Tue May 18 18:26:08 2021...

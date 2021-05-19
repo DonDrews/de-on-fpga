@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-| Date         : Fri May 14 20:54:40 2021
+| Date         : Tue May 18 18:26:08 2021
 | Host         : donovan-FR running 64-bit Ubuntu 18.04.5 LTS
 | Command      : report_utilization -file bram_loader_utilization_synth.rpt -pb bram_loader_utilization_synth.pb
 | Design       : bram_loader
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  105 |     0 |     20800 |  0.50 |
-|   LUT as Logic          |  105 |     0 |     20800 |  0.50 |
+| Slice LUTs*             |  108 |     0 |     20800 |  0.52 |
+|   LUT as Logic          |  108 |     0 |     20800 |  0.52 |
 |   LUT as Memory         |    0 |     0 |      9600 |  0.00 |
-| Slice Registers         |  128 |     0 |     41600 |  0.31 |
-|   Register as Flip Flop |  128 |     0 |     41600 |  0.31 |
+| Slice Registers         |  135 |     0 |     41600 |  0.32 |
+|   Register as Flip Flop |  135 |     0 |     41600 |  0.32 |
 |   Register as Latch     |    0 |     0 |     41600 |  0.00 |
 | F7 Muxes                |   16 |     0 |     16300 |  0.10 |
 | F8 Muxes                |    8 |     0 |      8150 |  0.10 |
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 1     |          Yes |         Set |            - |
-| 127   |          Yes |       Reset |            - |
+| 134   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -149,12 +149,12 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  127 |        Flop & Latch |
-| LUT6     |   46 |                 LUT |
-| LUT3     |   26 |                 LUT |
-| LUT4     |   20 |                 LUT |
-| LUT2     |   17 |                 LUT |
+| FDRE     |  134 |        Flop & Latch |
+| LUT6     |   45 |                 LUT |
+| LUT3     |   34 |                 LUT |
+| LUT4     |   21 |                 LUT |
 | MUXF7    |   16 |               MuxFx |
+| LUT2     |   16 |                 LUT |
 | LUT5     |   14 |                 LUT |
 | LUT1     |   10 |                 LUT |
 | MUXF8    |    8 |               MuxFx |

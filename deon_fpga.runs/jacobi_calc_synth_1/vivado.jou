@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Tue May 18 15:23:08 2021
+# Process ID: 10280
+# Current directory: /home/donovan/deon_fpga/deon_fpga.runs/jacobi_calc_synth_1
+# Command line: vivado -log jacobi_calc.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source jacobi_calc.tcl
+# Log file: /home/donovan/deon_fpga/deon_fpga.runs/jacobi_calc_synth_1/jacobi_calc.vds
+# Journal file: /home/donovan/deon_fpga/deon_fpga.runs/jacobi_calc_synth_1/vivado.jou
+#-----------------------------------------------------------
+source jacobi_calc.tcl -notrace

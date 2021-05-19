@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="75700001fs"></ZoomEndTime>
-      <Cursor1Time time="15400000fs"></Cursor1Time>
+      <ZoomStartTime time="1311820200fs"></ZoomStartTime>
+      <ZoomEndTime time="1311973201fs"></ZoomEndTime>
+      <Cursor1Time time="1311877000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="176"></NameColumnWidth>
+      <NameColumnWidth column_width="168"></NameColumnWidth>
       <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="19" />
+   <WVObjectSize size="22" />
    <wvobject type="logic" fp_name="/transmit_test/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -37,8 +37,8 @@
       <obj_property name="ObjectShortName">data[7:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/transmit_test/countdown">
-      <obj_property name="ElementShortName">countdown[8:0]</obj_property>
-      <obj_property name="ObjectShortName">countdown[8:0]</obj_property>
+      <obj_property name="ElementShortName">countdown[10:0]</obj_property>
+      <obj_property name="ObjectShortName">countdown[10:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/transmit_test/TxD">
@@ -60,10 +60,6 @@
    <wvobject type="logic" fp_name="/transmit_test/main_vec/byte_num">
       <obj_property name="ElementShortName">byte_num</obj_property>
       <obj_property name="ObjectShortName">byte_num</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/transmit_test/main_vec/\brams[0].vec /inst/\native_mem_module.blk_mem_gen_v8_4_4_inst /memory">
-      <obj_property name="ElementShortName">memory[0:15][15:0]</obj_property>
-      <obj_property name="ObjectShortName">memory[0:15][15:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/transmit_test/main_vec/sender/data">
       <obj_property name="ElementShortName">data[7:0]</obj_property>
@@ -96,5 +92,21 @@
    <wvobject type="logic" fp_name="/transmit_test/tx_last">
       <obj_property name="ElementShortName">tx_last</obj_property>
       <obj_property name="ObjectShortName">tx_last</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/transmit_test/main_vec/\brams[0].vec /inst/\native_mem_module.blk_mem_gen_v8_4_4_inst /memory">
+      <obj_property name="ElementShortName">memory[0:15][15:0]</obj_property>
+      <obj_property name="ObjectShortName">memory[0:15][15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/transmit_test/main_vec/\brams[1].vec /inst/\native_mem_module.blk_mem_gen_v8_4_4_inst /memory">
+      <obj_property name="ElementShortName">memory[0:15][15:0]</obj_property>
+      <obj_property name="ObjectShortName">memory[0:15][15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/transmit_test/main_vec/read_addr_byte">
+      <obj_property name="ElementShortName">read_addr_byte[7:0]</obj_property>
+      <obj_property name="ObjectShortName">read_addr_byte[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/transmit_test/main_vec/true_bram_data">
+      <obj_property name="ElementShortName">true_bram_data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">true_bram_data[15:0]</obj_property>
    </wvobject>
 </wave_config>
