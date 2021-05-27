@@ -24,6 +24,7 @@ module bram_loader(
    input clk,
    input rst_n,
    input send_data,
+   input start_computing_button,
    input uart_rx,
    output uart_tx,
    output not_reset,
@@ -44,34 +45,157 @@ end
 parameter num_brams = 8;
 
 //generate all block RAMs
-//PORTA
+//PORTA for UART
 reg[num_brams-1:0] a_enables;
-wire a_write; //1 if port a used to write, 0 to read
 wire[3:0] a_addr;
 reg[15:0] a_data_write;
-wire data_in;
-wire[7:0] uart_data;
 
-//PORTB
+//full busses for all BRAMS port A. Assigned to compute or UART depending on mode
+wire[3:0] a_addr_full [num_brams-1:0];
+wire[15:0] a_data_full [num_brams-1:0];
+wire[num_brams-1:0] a_enables_full;
+
+//busses for compute access to port A
+wire[3:0] a_addr_comp [num_brams-1:0];
+wire[15:0] a_data_comp [num_brams-1:0];
+wire[num_brams-1:0] a_enables_comp;
+
+//PORTB for UART
 wire[3:0] b_addr;
 wire[15:0] b_data_read [num_brams-1:0];
 
+//full busses for all BRAMS port B. Assigned to compute or UART depending on mode
+wire[3:0] b_addr_full;
+
+//compute busses port B
+reg[3:0] b_addr_comp;
+
+
+/*           control logic           */
+wire comp_start;
+wire[num_brams-1:0] comp_finished;
+button_debounce compute_button(
+    .clk(clk),
+    .button(start_computing_button),
+    .button_re(comp_start)
+);
+
+//determines which bram relative to the dsp slice is sampled from
+//0: previous BRAM, 1: own BRAM, 2: next BRAM
+reg[2:0] bram_offset;
+reg[2:0] bram_offset_delay_line [1:0];
+reg[2:0] next_dat_delay_line;
+reg[1:0] comp_state;
+reg[4:0] bram_input_index;
+
+always @(*) begin
+    case(bram_input_index)
+        5'b00000: begin
+            b_addr_comp = 4'hF;
+            bram_offset = 0;
+        end
+        5'b10001: begin
+            b_addr_comp = 4'h0;
+            bram_offset = 2;
+        end
+        default: begin
+            b_addr_comp = bram_input_index - 1;
+            bram_offset = 1;
+        end
+    endcase
+end
+
+always @(posedge clk) begin
+    if(~rst_n) begin
+        comp_state <= 0;
+        next_dat_delay_line <= 0;
+        bram_input_index <= 0;
+        bram_offset_delay_line[0] <= 0;
+        bram_offset_delay_line[1] <= 0;
+    end else begin
+        next_dat_delay_line[1] <= next_dat_delay_line[0];
+        next_dat_delay_line[2] <= next_dat_delay_line[1];
+        bram_offset_delay_line[0] <= bram_offset;
+        bram_offset_delay_line[1] <= bram_offset_delay_line[0];
+        case(comp_state)
+            0: begin
+                if(comp_start) begin
+                    comp_state <= 1;
+                    next_dat_delay_line[0] <= 1;
+                end else begin
+                    next_dat_delay_line[0] <= 0;
+                end
+                bram_input_index <= 0;
+            end
+            1: begin
+                next_dat_delay_line[0] <= 1;
+                bram_input_index <= bram_input_index + 1;
+                if(bram_input_index == 5'b10000) begin
+                    comp_state <= 2;
+                end
+            end
+            2: begin
+                if(&comp_finished) comp_state <= 0;
+                next_dat_delay_line[0] <= 0;
+                bram_input_index <= 0;
+            end
+        endcase
+    end
+end
+
+assign b_addr_full = (|comp_state) ? b_addr_comp : b_addr;
+assign a_enables_full = (|comp_state) ? a_enables_comp : a_enables;
+
 genvar i;
 for(i=0; i<num_brams; i=i+1) begin:brams
+    //mux of UART/compute BRAM access
+    assign a_addr_full[i] = (|comp_state) ? a_addr_comp[i] : a_addr;
+    assign a_data_full[i] = (|comp_state) ? a_data_comp[i] : a_data_write;
+    
+    //BRAM instance
     blk_mem_gen_0 vec (
         .clka(clk),    // input wire clka
         .ena(1),      // input wire ena
-        .wea(a_enables[i]),      // input wire [0 : 0] wea
-        .addra(a_addr),  // input wire [3 : 0] addra
-        .dina(a_data_write),    // input wire [15 : 0] dina
+        .wea(a_enables_full[i]),      // input wire [0 : 0] wea
+        .addra(a_addr_full[i]),  // input wire [3 : 0] addra
+        .dina(a_data_full[i]),    // input wire [15 : 0] dina
         .clkb(clk),    // input wire clkb
         .enb(1),      // input wire enb
-        .addrb(b_addr),  // input wire [3 : 0] addrb
+        .addrb(b_addr_full),  // input wire [3 : 0] addrb
         .doutb(b_data_read[i])  // output wire [15 : 0] doutb
+    );
+    
+    wire[15:0] prev_bram = (i == 0) ? 16'hBEEF : b_data_read[i-1];
+    wire[15:0] next_bram = (i == num_brams-1) ? 16'hBEEF : b_data_read[i+1];
+    reg[15:0] bram_data;
+    
+    always @(*) begin
+        case(bram_offset_delay_line[1])
+            0: bram_data = prev_bram;
+            1: bram_data = b_data_read[i];
+            2: bram_data = next_bram;
+            default: bram_data = 16'h0000;
+        endcase
+    end
+    
+    iter_compute #(
+        .FIRST(i == 0),
+        .LAST(i == num_brams-1) 
+    ) calc (
+        .clk(clk),
+        .bram_data(bram_data),
+        .start_compute(comp_start),
+        .next_data(next_dat_delay_line[2]),
+        .data_out(a_data_comp[i]),
+        .bram_write(a_enables_comp[i]),
+        .write_index(a_addr_comp[i]),
+        .done(comp_finished[i])
     );
 end
 
 //module for receiving data from the uart byte by byte
+wire data_in;
+wire[7:0] uart_data;
 uart_receive rx(
     .clk(clk),
     .rst_n(rst_n),
@@ -123,7 +247,6 @@ button_debounce tx_button(
     .button(send_data),
     .button_re(tx)
 );
-
 
 //handle address for ram load
 //delayed by one clock cycle

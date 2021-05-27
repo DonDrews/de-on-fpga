@@ -28,15 +28,28 @@ module transmit_test;
         #(5);
     end
     
+    integer i;
     initial begin
         rst_n = 0;
+        sd = 0;
         #(100);
         rst_n = 1;
+        for(i = 0; i < 64; i=i+1) begin
+            data = i + 10;
+            #(10000)
+            transmit = 1;
+            #(10000)
+            transmit = 0;
+        end
+        #(10000)
+        start = 1;
+        #(1000)
+        start = 0;
     end
     
     reg clk;
     reg rst_n;
-    wire transmit;
+    reg transmit;
     wire data_in;
     reg[7:0] data;
     uart_transmit tx(
@@ -48,31 +61,18 @@ module transmit_test;
         .ready()
     );
     
-    wire sd;
+    reg sd;
     wire tx_last;
+    reg start;
     bram_loader main_vec(
         .clk(clk),
         .rst_n(rst_n),
         .send_data(sd),
+        .start_computing_button(start),
         .uart_rx(TxD),
         .uart_tx(tx_last)
     );
     
-    reg[10:0] countdown;
-    assign sd = (data > 8'b11101010);
-    always @(posedge clk) begin
-        if(~rst_n) begin
-            countdown <= 0;
-            data <= 8'b10101010;
-        end else begin
-            countdown <= countdown + 11'b1;
-            if(countdown == 1)
-            begin
-                data <= data + 1;
-            end
-        end
-    end
     
-    assign transmit = (countdown > 500 && countdown < 800);
     
 endmodule

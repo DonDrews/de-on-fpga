@@ -39,16 +39,18 @@ module dsp_tester;
         next_data = 0;
         #(100);
         start_compute = 1;
-        #(10)
+        #(15)
         start_compute = 0;
         
         for(i = 0; i < 18; i = i+1) begin
-            #(50)
+            #(10)
             bram_data = (i % 2) ? 16'h0F0F : 16'h0FFF;
             next_data = 1;
-            #(10)
-            next_data = 0;
+            //#(10)
+            //next_data = 0;
         end
+        #(10)
+        next_data = 0;
     end
     
     wire[15:0] dat_f;

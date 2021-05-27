@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1311820200fs"></ZoomStartTime>
-      <ZoomEndTime time="1311973201fs"></ZoomEndTime>
-      <Cursor1Time time="1311877000fs"></Cursor1Time>
+      <ZoomStartTime time="1291072967fs"></ZoomStartTime>
+      <ZoomEndTime time="1291192568fs"></ZoomEndTime>
+      <Cursor1Time time="1291092133fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="168"></NameColumnWidth>
-      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+      <NameColumnWidth column_width="278"></NameColumnWidth>
+      <ValueColumnWidth column_width="123"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="22" />
+   <WVObjectSize size="12" />
    <wvobject type="logic" fp_name="/transmit_test/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -28,85 +28,44 @@
       <obj_property name="ElementShortName">rst_n</obj_property>
       <obj_property name="ObjectShortName">rst_n</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/transmit_test/transmit">
-      <obj_property name="ElementShortName">transmit</obj_property>
-      <obj_property name="ObjectShortName">transmit</obj_property>
+   <wvobject type="logic" fp_name="/transmit_test/main_vec/comp_start">
+      <obj_property name="ElementShortName">comp_start</obj_property>
+      <obj_property name="ObjectShortName">comp_start</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/transmit_test/data">
-      <obj_property name="ElementShortName">data[7:0]</obj_property>
-      <obj_property name="ObjectShortName">data[7:0]</obj_property>
+   <wvobject type="array" fp_name="/transmit_test/main_vec/b_addr_comp">
+      <obj_property name="ElementShortName">b_addr_comp[3:0]</obj_property>
+      <obj_property name="ObjectShortName">b_addr_comp[3:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/transmit_test/countdown">
-      <obj_property name="ElementShortName">countdown[10:0]</obj_property>
-      <obj_property name="ObjectShortName">countdown[10:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   <wvobject type="array" fp_name="/transmit_test/main_vec/bram_offset">
+      <obj_property name="ElementShortName">bram_offset[2:0]</obj_property>
+      <obj_property name="ObjectShortName">bram_offset[2:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/transmit_test/TxD">
-      <obj_property name="ElementShortName">TxD</obj_property>
-      <obj_property name="ObjectShortName">TxD</obj_property>
+   <wvobject type="array" fp_name="/transmit_test/main_vec/\brams[0].calc /bram_data">
+      <obj_property name="ElementShortName">bram_data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">bram_data[15:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/transmit_test/main_vec/a_addr">
-      <obj_property name="ElementShortName">a_addr[3:0]</obj_property>
-      <obj_property name="ObjectShortName">a_addr[3:0]</obj_property>
+   <wvobject type="array" fp_name="/transmit_test/main_vec/\brams[0].calc /shift_reg[0]">
+      <obj_property name="ElementShortName">[0][15:0]</obj_property>
+      <obj_property name="ObjectShortName">[0][15:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/transmit_test/main_vec/a_enables">
-      <obj_property name="ElementShortName">a_enables[7:0]</obj_property>
-      <obj_property name="ObjectShortName">a_enables[7:0]</obj_property>
+   <wvobject type="array" fp_name="/transmit_test/main_vec/\brams[0].calc /shift_reg[1]">
+      <obj_property name="ElementShortName">[1][15:0]</obj_property>
+      <obj_property name="ObjectShortName">[1][15:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/transmit_test/main_vec/data_in">
-      <obj_property name="ElementShortName">data_in</obj_property>
-      <obj_property name="ObjectShortName">data_in</obj_property>
+   <wvobject type="array" fp_name="/transmit_test/main_vec/\brams[0].calc /shift_reg[2]">
+      <obj_property name="ElementShortName">[2][15:0]</obj_property>
+      <obj_property name="ObjectShortName">[2][15:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/transmit_test/main_vec/byte_num">
-      <obj_property name="ElementShortName">byte_num</obj_property>
-      <obj_property name="ObjectShortName">byte_num</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/transmit_test/main_vec/sender/data">
-      <obj_property name="ElementShortName">data[7:0]</obj_property>
-      <obj_property name="ObjectShortName">data[7:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/transmit_test/main_vec/sender/valid">
-      <obj_property name="ElementShortName">valid</obj_property>
-      <obj_property name="ObjectShortName">valid</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/transmit_test/main_vec/sender/ready">
-      <obj_property name="ElementShortName">ready</obj_property>
-      <obj_property name="ObjectShortName">ready</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/transmit_test/main_vec/state">
-      <obj_property name="ElementShortName">state[1:0]</obj_property>
-      <obj_property name="ObjectShortName">state[1:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/transmit_test/main_vec/send_data">
-      <obj_property name="ElementShortName">send_data</obj_property>
-      <obj_property name="ObjectShortName">send_data</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/transmit_test/main_vec/sender/nextstate">
-      <obj_property name="ElementShortName">nextstate</obj_property>
-      <obj_property name="ObjectShortName">nextstate</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/transmit_test/main_vec/read_addr_byte">
-      <obj_property name="ElementShortName">read_addr_byte[7:0]</obj_property>
-      <obj_property name="ObjectShortName">read_addr_byte[7:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/transmit_test/tx_last">
-      <obj_property name="ElementShortName">tx_last</obj_property>
-      <obj_property name="ObjectShortName">tx_last</obj_property>
+   <wvobject type="array" fp_name="/transmit_test/main_vec/\brams[0].calc /dsp_out">
+      <obj_property name="ElementShortName">dsp_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dsp_out[31:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/transmit_test/main_vec/\brams[0].vec /inst/\native_mem_module.blk_mem_gen_v8_4_4_inst /memory">
       <obj_property name="ElementShortName">memory[0:15][15:0]</obj_property>
       <obj_property name="ObjectShortName">memory[0:15][15:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/transmit_test/main_vec/\brams[1].vec /inst/\native_mem_module.blk_mem_gen_v8_4_4_inst /memory">
-      <obj_property name="ElementShortName">memory[0:15][15:0]</obj_property>
-      <obj_property name="ObjectShortName">memory[0:15][15:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/transmit_test/main_vec/read_addr_byte">
-      <obj_property name="ElementShortName">read_addr_byte[7:0]</obj_property>
-      <obj_property name="ObjectShortName">read_addr_byte[7:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/transmit_test/main_vec/true_bram_data">
-      <obj_property name="ElementShortName">true_bram_data[15:0]</obj_property>
-      <obj_property name="ObjectShortName">true_bram_data[15:0]</obj_property>
+   <wvobject type="array" fp_name="/transmit_test/main_vec/comp_finished">
+      <obj_property name="ElementShortName">comp_finished[7:0]</obj_property>
+      <obj_property name="ObjectShortName">comp_finished[7:0]</obj_property>
    </wvobject>
 </wave_config>

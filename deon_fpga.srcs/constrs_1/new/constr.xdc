@@ -18,4 +18,7 @@ set_property IOSTANDARD LVCMOS33 [get_ports not_reset]
 set_property PACKAGE_PIN P1 [get_ports button_re]
 set_property IOSTANDARD LVCMOS33 [get_ports button_re]
 
+set_property PACKAGE_PIN T17 [get_ports start_computing_button]
+set_property IOSTANDARD LVCMOS33 [get_ports start_computing_button]
+
 create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports clk]

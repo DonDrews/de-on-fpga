@@ -8,5 +8,13 @@ Block Memory Generator module transmit_test.main_vec.\brams[4].vec .inst.\native
 Block Memory Generator module transmit_test.main_vec.\brams[5].vec .inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
 Block Memory Generator module transmit_test.main_vec.\brams[6].vec .inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
 Block Memory Generator module transmit_test.main_vec.\brams[7].vec .inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
-blk_mem_gen_v8_4_4 collision detected at time: 36125000, Instance: transmit_test.main_vec.\brams[0].vec .inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: 0, B  read address: 0
-blk_mem_gen_v8_4_4 collision detected at time: 691125000, Instance: transmit_test.main_vec.\brams[1].vec .inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: 0, B  read address: 0
+blk_mem_gen_v8_4_4 collision detected at time: 41125000, Instance: transmit_test.main_vec.\brams[0].vec .inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: 0, B read address: 0
+blk_mem_gen_v8_4_4 collision detected at time: 681125000, Instance: transmit_test.main_vec.\brams[1].vec .inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: 0, B read address: 0
+blk_mem_gen_v8_4_4 collision detected at time: 1291335000, Instance: transmit_test.main_vec.\brams[0].vec .inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: f, B read address: f
+blk_mem_gen_v8_4_4 collision detected at time: 1291335000, Instance: transmit_test.main_vec.\brams[1].vec .inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: f, B read address: f
+blk_mem_gen_v8_4_4 collision detected at time: 1291335000, Instance: transmit_test.main_vec.\brams[2].vec .inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: f, B read address: f
+blk_mem_gen_v8_4_4 collision detected at time: 1291335000, Instance: transmit_test.main_vec.\brams[3].vec .inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: f, B read address: f
+blk_mem_gen_v8_4_4 collision detected at time: 1291335000, Instance: transmit_test.main_vec.\brams[4].vec .inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: f, B read address: f
+blk_mem_gen_v8_4_4 collision detected at time: 1291335000, Instance: transmit_test.main_vec.\brams[5].vec .inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: f, B read address: f
+blk_mem_gen_v8_4_4 collision detected at time: 1291335000, Instance: transmit_test.main_vec.\brams[6].vec .inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: f, B read address: f
+blk_mem_gen_v8_4_4 collision detected at time: 1291335000, Instance: transmit_test.main_vec.\brams[7].vec .inst.\native_mem_module.blk_mem_gen_v8_4_4_inst , A write address: f, B read address: f

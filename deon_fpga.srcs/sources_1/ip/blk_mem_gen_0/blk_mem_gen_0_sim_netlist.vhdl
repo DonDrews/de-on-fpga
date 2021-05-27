@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
--- Date        : Sat May  8 15:37:17 2021
+-- Date        : Thu May 27 10:39:18 2021
 -- Host        : donovan-FR running 64-bit Ubuntu 18.04.5 LTS
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/donovan/deon_fpga/deon_fpga.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_sim_netlist.vhdl
@@ -17,7 +17,6 @@ use UNISIM.VCOMPONENTS.ALL;
 entity blk_mem_gen_0_blk_mem_gen_prim_wrapper is
   port (
     doutb : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    clkb : in STD_LOGIC;
     clka : in STD_LOGIC;
     enb : in STD_LOGIC;
     ena : in STD_LOGIC;
@@ -151,8 +150,8 @@ begin
       SIM_DEVICE => "7SERIES",
       SRVAL_A => X"00000",
       SRVAL_B => X"00000",
-      WRITE_MODE_A => "WRITE_FIRST",
-      WRITE_MODE_B => "WRITE_FIRST",
+      WRITE_MODE_A => "READ_FIRST",
+      WRITE_MODE_B => "READ_FIRST",
       WRITE_WIDTH_A => 0,
       WRITE_WIDTH_B => 36
     )
@@ -163,7 +162,7 @@ begin
       ADDRBWRADDR(13 downto 9) => B"00000",
       ADDRBWRADDR(8 downto 5) => addra(3 downto 0),
       ADDRBWRADDR(4 downto 0) => B"00000",
-      CLKARDCLK => clkb,
+      CLKARDCLK => clka,
       CLKBWRCLK => clka,
       DIADI(15 downto 12) => B"0000",
       DIADI(11 downto 8) => dina(7 downto 4),
@@ -221,7 +220,6 @@ use UNISIM.VCOMPONENTS.ALL;
 entity blk_mem_gen_0_blk_mem_gen_prim_width is
   port (
     doutb : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    clkb : in STD_LOGIC;
     clka : in STD_LOGIC;
     enb : in STD_LOGIC;
     ena : in STD_LOGIC;
@@ -241,7 +239,6 @@ begin
       addra(3 downto 0) => addra(3 downto 0),
       addrb(3 downto 0) => addrb(3 downto 0),
       clka => clka,
-      clkb => clkb,
       dina(15 downto 0) => dina(15 downto 0),
       doutb(15 downto 0) => doutb(15 downto 0),
       ena => ena,
@@ -256,7 +253,6 @@ use UNISIM.VCOMPONENTS.ALL;
 entity blk_mem_gen_0_blk_mem_gen_generic_cstr is
   port (
     doutb : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    clkb : in STD_LOGIC;
     clka : in STD_LOGIC;
     enb : in STD_LOGIC;
     ena : in STD_LOGIC;
@@ -276,7 +272,6 @@ begin
       addra(3 downto 0) => addra(3 downto 0),
       addrb(3 downto 0) => addrb(3 downto 0),
       clka => clka,
-      clkb => clkb,
       dina(15 downto 0) => dina(15 downto 0),
       doutb(15 downto 0) => doutb(15 downto 0),
       ena => ena,
@@ -291,7 +286,6 @@ use UNISIM.VCOMPONENTS.ALL;
 entity blk_mem_gen_0_blk_mem_gen_top is
   port (
     doutb : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    clkb : in STD_LOGIC;
     clka : in STD_LOGIC;
     enb : in STD_LOGIC;
     ena : in STD_LOGIC;
@@ -311,7 +305,6 @@ begin
       addra(3 downto 0) => addra(3 downto 0),
       addrb(3 downto 0) => addrb(3 downto 0),
       clka => clka,
-      clkb => clkb,
       dina(15 downto 0) => dina(15 downto 0),
       doutb(15 downto 0) => doutb(15 downto 0),
       ena => ena,
@@ -326,7 +319,6 @@ use UNISIM.VCOMPONENTS.ALL;
 entity blk_mem_gen_0_blk_mem_gen_v8_4_4_synth is
   port (
     doutb : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    clkb : in STD_LOGIC;
     clka : in STD_LOGIC;
     enb : in STD_LOGIC;
     ena : in STD_LOGIC;
@@ -346,7 +338,6 @@ begin
       addra(3 downto 0) => addra(3 downto 0),
       addrb(3 downto 0) => addrb(3 downto 0),
       clka => clka,
-      clkb => clkb,
       dina(15 downto 0) => dina(15 downto 0),
       doutb(15 downto 0) => doutb(15 downto 0),
       ena => ena,
@@ -439,7 +430,7 @@ entity blk_mem_gen_0_blk_mem_gen_v8_4_4 is
   attribute C_BYTE_SIZE : integer;
   attribute C_BYTE_SIZE of blk_mem_gen_0_blk_mem_gen_v8_4_4 : entity is 9;
   attribute C_COMMON_CLK : integer;
-  attribute C_COMMON_CLK of blk_mem_gen_0_blk_mem_gen_v8_4_4 : entity is 0;
+  attribute C_COMMON_CLK of blk_mem_gen_0_blk_mem_gen_v8_4_4 : entity is 1;
   attribute C_COUNT_18K_BRAM : string;
   attribute C_COUNT_18K_BRAM of blk_mem_gen_0_blk_mem_gen_v8_4_4 : entity is "1";
   attribute C_COUNT_36K_BRAM : string;
@@ -567,7 +558,7 @@ entity blk_mem_gen_0_blk_mem_gen_v8_4_4 is
   attribute C_WRITE_MODE_A : string;
   attribute C_WRITE_MODE_A of blk_mem_gen_0_blk_mem_gen_v8_4_4 : entity is "NO_CHANGE";
   attribute C_WRITE_MODE_B : string;
-  attribute C_WRITE_MODE_B of blk_mem_gen_0_blk_mem_gen_v8_4_4 : entity is "WRITE_FIRST";
+  attribute C_WRITE_MODE_B of blk_mem_gen_0_blk_mem_gen_v8_4_4 : entity is "READ_FIRST";
   attribute C_WRITE_WIDTH_A : integer;
   attribute C_WRITE_WIDTH_A of blk_mem_gen_0_blk_mem_gen_v8_4_4 : entity is 16;
   attribute C_WRITE_WIDTH_B : integer;
@@ -656,7 +647,6 @@ inst_blk_mem_gen: entity work.blk_mem_gen_0_blk_mem_gen_v8_4_4_synth
       addra(3 downto 0) => addra(3 downto 0),
       addrb(3 downto 0) => addrb(3 downto 0),
       clka => clka,
-      clkb => clkb,
       dina(15 downto 0) => dina(15 downto 0),
       doutb(15 downto 0) => doutb(15 downto 0),
       ena => ena,
@@ -726,7 +716,7 @@ architecture STRUCTURE of blk_mem_gen_0 is
   attribute C_BYTE_SIZE : integer;
   attribute C_BYTE_SIZE of U0 : label is 9;
   attribute C_COMMON_CLK : integer;
-  attribute C_COMMON_CLK of U0 : label is 0;
+  attribute C_COMMON_CLK of U0 : label is 1;
   attribute C_COUNT_18K_BRAM : string;
   attribute C_COUNT_18K_BRAM of U0 : label is "1";
   attribute C_COUNT_36K_BRAM : string;
@@ -854,7 +844,7 @@ architecture STRUCTURE of blk_mem_gen_0 is
   attribute C_WRITE_MODE_A : string;
   attribute C_WRITE_MODE_A of U0 : label is "NO_CHANGE";
   attribute C_WRITE_MODE_B : string;
-  attribute C_WRITE_MODE_B of U0 : label is "WRITE_FIRST";
+  attribute C_WRITE_MODE_B of U0 : label is "READ_FIRST";
   attribute C_WRITE_WIDTH_A : integer;
   attribute C_WRITE_WIDTH_A of U0 : label is 16;
   attribute C_WRITE_WIDTH_B : integer;

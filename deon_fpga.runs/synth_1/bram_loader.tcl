@@ -70,8 +70,9 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param xicom.use_bs_reader 1
 set_param chipscope.maxJobs 1
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -91,12 +92,16 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   /home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/button_debounce.v
+  /home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/iter_compute.v
   /home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/uart_receive.v
   /home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/uart_transmit.v
   /home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/bram_loader.v
 }
 read_ip -quiet /home/donovan/deon_fpga/deon_fpga.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
 set_property used_in_implementation false [get_files -all /home/donovan/deon_fpga/deon_fpga.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_ooc.xdc]
+
+read_ip -quiet /home/donovan/deon_fpga/deon_fpga.srcs/sources_1/ip/jacobi_calc/jacobi_calc.xci
+set_property used_in_implementation false [get_files -all /home/donovan/deon_fpga/deon_fpga.srcs/sources_1/ip/jacobi_calc/jacobi_calc_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

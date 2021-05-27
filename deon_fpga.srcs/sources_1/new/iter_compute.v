@@ -32,6 +32,7 @@ module iter_compute
     
     output reg[15:0] data_out,
     output wire bram_write,
+    output wire[3:0] write_index,
     output wire done
     );
 
@@ -55,8 +56,10 @@ reg[4:0] sample_num;
 
 wire[31:0] dsp_out;
 
+assign write_index = sample_num - 1;
+
 //DSP slice
-jacobi_calc your_instance_name (
+jacobi_calc dsp_slice (
   .CLK(clk),  // input wire CLK
   .A(shift_reg[0]),      // input wire [15 : 0] A
   .B(MULT_CONST),      // input wire [15 : 0] B
@@ -70,11 +73,11 @@ always @(posedge clk) begin
         sample_num <= 0;
     end else begin
         //uses the second to last stage in shift register, so that this aligns with the bram write
-        if(wait_write[2]) sample_num <= sample_num + 1;
+        if(wait_write[1]) sample_num <= sample_num + 1;
     end
 end
 
-assign done = wait_write[3] & (sample_num == 16);
+assign done = wait_write[2] & (sample_num == 16);
 
 always @(*) begin
     if(FIRST) data_out = (sample_num == 1) ? BOUNDARY_0 : dsp_out[27:12];
@@ -83,12 +86,11 @@ always @(*) begin
 end
 
 //logic for delay line that matches pipelining in DSP slice
-assign bram_write = wait_write[3];
+assign bram_write = wait_write[2];
 always @(posedge clk) begin
     if(start_compute) begin
-        wait_write <= 0;
+        wait_write[2:1] <= 0;
     end else begin
-        wait_write[3] <= wait_write[2];
         wait_write[2] <= wait_write[1];
         wait_write[1] <= wait_write[0];
     end
@@ -107,6 +109,7 @@ end
 always @(posedge clk) begin
     if(start_compute) begin
         state <= 0;
+        wait_write[0] <= 0;
     end else begin
         case(state)
         0,1: begin

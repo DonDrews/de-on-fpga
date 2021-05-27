@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1621387530">
-  <File Type="VDS-TIMINGSUMMARY" Name="bram_loader_timing_summary_synth.rpt"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1622151659">
   <File Type="RDS-DCP" Name="bram_loader.dcp"/>
   <File Type="RDS-UTIL-PB" Name="bram_loader_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="bram_loader_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="bram_loader_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="bram_loader.vds"/>
-  <File Type="REPORTS-TCL" Name="bram_loader_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="bram_loader_timing_summary_synth.pb"/>
   <File Type="PA-TCL" Name="bram_loader.tcl"/>
+  <File Type="RDS-UTIL" Name="bram_loader_utilization_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="bram_loader_reports.tcl"/>
+  <File Type="RDS-RDS" Name="bram_loader.vds"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/button_debounce.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/iter_compute.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -70,10 +74,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="jacobi_calc"/>
 </GenRun>

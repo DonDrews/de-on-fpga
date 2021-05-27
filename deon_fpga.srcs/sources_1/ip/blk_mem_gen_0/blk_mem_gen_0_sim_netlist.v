@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-// Date        : Sat May  8 15:37:17 2021
+// Date        : Thu May 27 10:39:18 2021
 // Host        : donovan-FR running 64-bit Ubuntu 18.04.5 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/donovan/deon_fpga/deon_fpga.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_sim_netlist.v
@@ -71,7 +71,7 @@ module blk_mem_gen_0
   (* C_AXI_SLAVE_TYPE = "0" *) 
   (* C_AXI_TYPE = "1" *) 
   (* C_BYTE_SIZE = "9" *) 
-  (* C_COMMON_CLK = "0" *) 
+  (* C_COMMON_CLK = "1" *) 
   (* C_COUNT_18K_BRAM = "1" *) 
   (* C_COUNT_36K_BRAM = "0" *) 
   (* C_CTRL_ECC_ALGO = "NONE" *) 
@@ -135,7 +135,7 @@ module blk_mem_gen_0
   (* C_WRITE_DEPTH_A = "16" *) 
   (* C_WRITE_DEPTH_B = "16" *) 
   (* C_WRITE_MODE_A = "NO_CHANGE" *) 
-  (* C_WRITE_MODE_B = "WRITE_FIRST" *) 
+  (* C_WRITE_MODE_B = "READ_FIRST" *) 
   (* C_WRITE_WIDTH_A = "16" *) 
   (* C_WRITE_WIDTH_B = "16" *) 
   (* C_XDEVICEFAMILY = "artix7" *) 
@@ -210,7 +210,6 @@ endmodule
 (* ORIG_REF_NAME = "blk_mem_gen_generic_cstr" *) 
 module blk_mem_gen_0_blk_mem_gen_generic_cstr
    (doutb,
-    clkb,
     clka,
     enb,
     ena,
@@ -219,7 +218,6 @@ module blk_mem_gen_0_blk_mem_gen_generic_cstr
     dina,
     wea);
   output [15:0]doutb;
-  input clkb;
   input clka;
   input enb;
   input ena;
@@ -231,7 +229,6 @@ module blk_mem_gen_0_blk_mem_gen_generic_cstr
   wire [3:0]addra;
   wire [3:0]addrb;
   wire clka;
-  wire clkb;
   wire [15:0]dina;
   wire [15:0]doutb;
   wire ena;
@@ -242,7 +239,6 @@ module blk_mem_gen_0_blk_mem_gen_generic_cstr
        (.addra(addra),
         .addrb(addrb),
         .clka(clka),
-        .clkb(clkb),
         .dina(dina),
         .doutb(doutb),
         .ena(ena),
@@ -253,7 +249,6 @@ endmodule
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
 module blk_mem_gen_0_blk_mem_gen_prim_width
    (doutb,
-    clkb,
     clka,
     enb,
     ena,
@@ -262,7 +257,6 @@ module blk_mem_gen_0_blk_mem_gen_prim_width
     dina,
     wea);
   output [15:0]doutb;
-  input clkb;
   input clka;
   input enb;
   input ena;
@@ -274,7 +268,6 @@ module blk_mem_gen_0_blk_mem_gen_prim_width
   wire [3:0]addra;
   wire [3:0]addrb;
   wire clka;
-  wire clkb;
   wire [15:0]dina;
   wire [15:0]doutb;
   wire ena;
@@ -285,7 +278,6 @@ module blk_mem_gen_0_blk_mem_gen_prim_width
        (.addra(addra),
         .addrb(addrb),
         .clka(clka),
-        .clkb(clkb),
         .dina(dina),
         .doutb(doutb),
         .ena(ena),
@@ -296,7 +288,6 @@ endmodule
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper" *) 
 module blk_mem_gen_0_blk_mem_gen_prim_wrapper
    (doutb,
-    clkb,
     clka,
     enb,
     ena,
@@ -305,7 +296,6 @@ module blk_mem_gen_0_blk_mem_gen_prim_wrapper
     dina,
     wea);
   output [15:0]doutb;
-  input clkb;
   input clka;
   input enb;
   input ena;
@@ -337,7 +327,6 @@ module blk_mem_gen_0_blk_mem_gen_prim_wrapper
   wire [3:0]addra;
   wire [3:0]addrb;
   wire clka;
-  wire clkb;
   wire [15:0]dina;
   wire [15:0]doutb;
   wire ena;
@@ -441,14 +430,14 @@ module blk_mem_gen_0_blk_mem_gen_prim_wrapper
     .SIM_DEVICE("7SERIES"),
     .SRVAL_A(18'h00000),
     .SRVAL_B(18'h00000),
-    .WRITE_MODE_A("WRITE_FIRST"),
-    .WRITE_MODE_B("WRITE_FIRST"),
+    .WRITE_MODE_A("READ_FIRST"),
+    .WRITE_MODE_B("READ_FIRST"),
     .WRITE_WIDTH_A(0),
     .WRITE_WIDTH_B(36)) 
     \DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram 
        (.ADDRARDADDR({1'b0,1'b0,1'b0,1'b0,1'b0,addrb,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .ADDRBWRADDR({1'b0,1'b0,1'b0,1'b0,1'b0,addra,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .CLKARDCLK(clkb),
+        .CLKARDCLK(clka),
         .CLKBWRCLK(clka),
         .DIADI({1'b0,1'b0,1'b0,1'b0,dina[7:4],1'b0,1'b0,1'b0,1'b0,dina[3:0]}),
         .DIBDI({1'b0,1'b0,1'b0,1'b0,dina[15:12],1'b0,1'b0,1'b0,1'b0,dina[11:8]}),
@@ -473,7 +462,6 @@ endmodule
 (* ORIG_REF_NAME = "blk_mem_gen_top" *) 
 module blk_mem_gen_0_blk_mem_gen_top
    (doutb,
-    clkb,
     clka,
     enb,
     ena,
@@ -482,7 +470,6 @@ module blk_mem_gen_0_blk_mem_gen_top
     dina,
     wea);
   output [15:0]doutb;
-  input clkb;
   input clka;
   input enb;
   input ena;
@@ -494,7 +481,6 @@ module blk_mem_gen_0_blk_mem_gen_top
   wire [3:0]addra;
   wire [3:0]addrb;
   wire clka;
-  wire clkb;
   wire [15:0]dina;
   wire [15:0]doutb;
   wire ena;
@@ -505,7 +491,6 @@ module blk_mem_gen_0_blk_mem_gen_top
        (.addra(addra),
         .addrb(addrb),
         .clka(clka),
-        .clkb(clkb),
         .dina(dina),
         .doutb(doutb),
         .ena(ena),
@@ -515,7 +500,7 @@ endmodule
 
 (* C_ADDRA_WIDTH = "4" *) (* C_ADDRB_WIDTH = "4" *) (* C_ALGORITHM = "1" *) 
 (* C_AXI_ID_WIDTH = "4" *) (* C_AXI_SLAVE_TYPE = "0" *) (* C_AXI_TYPE = "1" *) 
-(* C_BYTE_SIZE = "9" *) (* C_COMMON_CLK = "0" *) (* C_COUNT_18K_BRAM = "1" *) 
+(* C_BYTE_SIZE = "9" *) (* C_COMMON_CLK = "1" *) (* C_COUNT_18K_BRAM = "1" *) 
 (* C_COUNT_36K_BRAM = "0" *) (* C_CTRL_ECC_ALGO = "NONE" *) (* C_DEFAULT_DATA = "0" *) 
 (* C_DISABLE_WARN_BHV_COLL = "0" *) (* C_DISABLE_WARN_BHV_RANGE = "0" *) (* C_ELABORATION_DIR = "./" *) 
 (* C_ENABLE_32BIT_ADDRESS = "0" *) (* C_EN_DEEPSLEEP_PIN = "0" *) (* C_EN_ECC_PIPE = "0" *) 
@@ -536,7 +521,7 @@ endmodule
 (* C_USE_BYTE_WEA = "0" *) (* C_USE_BYTE_WEB = "0" *) (* C_USE_DEFAULT_DATA = "0" *) 
 (* C_USE_ECC = "0" *) (* C_USE_SOFTECC = "0" *) (* C_USE_URAM = "0" *) 
 (* C_WEA_WIDTH = "1" *) (* C_WEB_WIDTH = "1" *) (* C_WRITE_DEPTH_A = "16" *) 
-(* C_WRITE_DEPTH_B = "16" *) (* C_WRITE_MODE_A = "NO_CHANGE" *) (* C_WRITE_MODE_B = "WRITE_FIRST" *) 
+(* C_WRITE_DEPTH_B = "16" *) (* C_WRITE_MODE_A = "NO_CHANGE" *) (* C_WRITE_MODE_B = "READ_FIRST" *) 
 (* C_WRITE_WIDTH_A = "16" *) (* C_WRITE_WIDTH_B = "16" *) (* C_XDEVICEFAMILY = "artix7" *) 
 (* ORIG_REF_NAME = "blk_mem_gen_v8_4_4" *) (* downgradeipidentifiedwarnings = "yes" *) 
 module blk_mem_gen_0_blk_mem_gen_v8_4_4
@@ -671,7 +656,6 @@ module blk_mem_gen_0_blk_mem_gen_v8_4_4
   wire [3:0]addra;
   wire [3:0]addrb;
   wire clka;
-  wire clkb;
   wire [15:0]dina;
   wire [15:0]doutb;
   wire ena;
@@ -748,7 +732,6 @@ module blk_mem_gen_0_blk_mem_gen_v8_4_4
        (.addra(addra),
         .addrb(addrb),
         .clka(clka),
-        .clkb(clkb),
         .dina(dina),
         .doutb(doutb),
         .ena(ena),
@@ -759,7 +742,6 @@ endmodule
 (* ORIG_REF_NAME = "blk_mem_gen_v8_4_4_synth" *) 
 module blk_mem_gen_0_blk_mem_gen_v8_4_4_synth
    (doutb,
-    clkb,
     clka,
     enb,
     ena,
@@ -768,7 +750,6 @@ module blk_mem_gen_0_blk_mem_gen_v8_4_4_synth
     dina,
     wea);
   output [15:0]doutb;
-  input clkb;
   input clka;
   input enb;
   input ena;
@@ -780,7 +761,6 @@ module blk_mem_gen_0_blk_mem_gen_v8_4_4_synth
   wire [3:0]addra;
   wire [3:0]addrb;
   wire clka;
-  wire clkb;
   wire [15:0]dina;
   wire [15:0]doutb;
   wire ena;
@@ -791,7 +771,6 @@ module blk_mem_gen_0_blk_mem_gen_v8_4_4_synth
        (.addra(addra),
         .addrb(addrb),
         .clka(clka),
-        .clkb(clkb),
         .dina(dina),
         .doutb(doutb),
         .ena(ena),
