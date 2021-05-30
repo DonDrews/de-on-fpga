@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-| Date             : Thu May 27 14:42:53 2021
+| Date             : Sun May 30 14:46:27 2021
 | Host             : donovan-FR running 64-bit Ubuntu 18.04.5 LTS
 | Command          : report_power -file bram_loader_power_routed.rpt -pb bram_loader_power_summary_routed.pb -rpx bram_loader_power_routed.rpx
 | Design           : bram_loader
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.112        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.039        |
+| Dynamic (W)              | 0.040        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.4         |
@@ -53,16 +53,15 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |     0.003 |     1344 |       --- |             --- |
-|   LUT as Logic |     0.003 |      409 |     20800 |            1.97 |
-|   Register     |    <0.001 |      660 |     41600 |            1.59 |
-|   F7/F8 Muxes  |    <0.001 |       24 |     32600 |            0.07 |
-|   CARRY4       |    <0.001 |        8 |      8150 |            0.10 |
-|   Others       |     0.000 |      102 |       --- |             --- |
-| Signals        |     0.005 |     1185 |       --- |             --- |
+| Slice Logic    |     0.003 |     1393 |       --- |             --- |
+|   LUT as Logic |     0.003 |      447 |     20800 |            2.15 |
+|   Register     |    <0.001 |      684 |     41600 |            1.64 |
+|   CARRY4       |    <0.001 |       12 |      8150 |            0.15 |
+|   Others       |     0.000 |      106 |       --- |             --- |
+| Signals        |     0.005 |     1263 |       --- |             --- |
 | Block RAM      |     0.019 |        4 |        50 |            8.00 |
 | DSPs           |     0.008 |        8 |        90 |            8.89 |
-| I/O            |    <0.001 |        8 |       106 |            7.55 |
+| I/O            |     0.001 |        8 |       106 |            7.55 |
 | Static Power   |     0.072 |          |           |                 |
 | Total          |     0.112 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
@@ -143,7 +142,7 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| bram_loader            |     0.039 |
+| bram_loader            |     0.040 |
 |   brams[0].calc        |     0.002 |
 |     dsp_slice          |     0.001 |
 |       U0               |     0.001 |
@@ -165,9 +164,9 @@ Table of Contents
 |   brams[3].calc        |     0.002 |
 |     dsp_slice          |     0.001 |
 |       U0               |     0.001 |
-|   brams[3].vec         |     0.003 |
-|     U0                 |     0.003 |
-|       inst_blk_mem_gen |     0.003 |
+|   brams[3].vec         |     0.002 |
+|     U0                 |     0.002 |
+|       inst_blk_mem_gen |     0.002 |
 |   brams[4].calc        |     0.002 |
 |     dsp_slice          |     0.001 |
 |       U0               |     0.001 |
@@ -189,9 +188,9 @@ Table of Contents
 |   brams[7].calc        |     0.002 |
 |     dsp_slice          |     0.001 |
 |       U0               |     0.001 |
-|   brams[7].vec         |     0.003 |
-|     U0                 |     0.003 |
-|       inst_blk_mem_gen |     0.003 |
+|   brams[7].vec         |     0.002 |
+|     U0                 |     0.002 |
+|       inst_blk_mem_gen |     0.002 |
 +------------------------+-----------+
 
 

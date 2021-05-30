@@ -26,12 +26,19 @@ module button_debounce(
     output button_re
     );
     
+    //sychronize button input to clock to prevent metastability
+    reg[1:0] button_sync;
+    always @(posedge clk) begin
+        button_sync[0] <= button;
+        button_sync[1] <= button_sync[0];
+    end
+    
     //counts up to 150 for clock cycles that button has been continuously pressed
     //when count surpasses 100, puts a pulse onto button_re
     assign button_re = (pressed_count == 100);
     reg[8:0] pressed_count;
     always @(posedge clk) begin
-        if(button) begin
+        if(button_sync[1]) begin
             if(pressed_count != 150) pressed_count <= pressed_count + 1;
         end else begin
             pressed_count <= 0;

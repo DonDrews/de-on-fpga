@@ -4,7 +4,7 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "/home/donovan/deon_fpga/deon_fpga.s
 INFO: [VRFC 10-311] analyzing module bram_loader
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/button_debounce.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module button_debounce
-WARNING: [VRFC 10-3380] identifier 'pressed_count' is used before its declaration [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/button_debounce.v:31]
+WARNING: [VRFC 10-3380] identifier 'pressed_count' is used before its declaration [/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/button_debounce.v:38]
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/iter_compute.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module iter_compute
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/donovan/deon_fpga/deon_fpga.srcs/sources_1/new/uart_receive.v" into library xil_defaultlib

@@ -43,6 +43,7 @@ always @(posedge clk) begin
 end
 
 parameter num_brams = 8;
+parameter num_iterations = 5000;
 
 //generate all block RAMs
 //PORTA for UART
@@ -88,6 +89,8 @@ reg[2:0] next_dat_delay_line;
 reg[1:0] comp_state;
 reg[4:0] bram_input_index;
 
+reg[15:0] compute_iteration;
+
 always @(*) begin
     case(bram_input_index)
         5'b00000: begin
@@ -105,6 +108,7 @@ always @(*) begin
     endcase
 end
 
+reg rst_calc;
 always @(posedge clk) begin
     if(~rst_n) begin
         comp_state <= 0;
@@ -112,16 +116,21 @@ always @(posedge clk) begin
         bram_input_index <= 0;
         bram_offset_delay_line[0] <= 0;
         bram_offset_delay_line[1] <= 0;
+        compute_iteration <= 0;
+        rst_calc <= 0;
     end else begin
         next_dat_delay_line[1] <= next_dat_delay_line[0];
         next_dat_delay_line[2] <= next_dat_delay_line[1];
         bram_offset_delay_line[0] <= bram_offset;
         bram_offset_delay_line[1] <= bram_offset_delay_line[0];
+        rst_calc <= 0;
         case(comp_state)
             0: begin
-                if(comp_start) begin
+                if(comp_start | (compute_iteration > 0 && compute_iteration < num_iterations)) begin
                     comp_state <= 1;
                     next_dat_delay_line[0] <= 1;
+                    compute_iteration <= compute_iteration + 1;
+                    rst_calc <= 1;
                 end else begin
                     next_dat_delay_line[0] <= 0;
                 end
@@ -184,7 +193,7 @@ for(i=0; i<num_brams; i=i+1) begin:brams
     ) calc (
         .clk(clk),
         .bram_data(bram_data),
-        .start_compute(comp_start),
+        .start_compute(rst_calc),
         .next_data(next_dat_delay_line[2]),
         .data_out(a_data_comp[i]),
         .bram_write(a_enables_comp[i]),
